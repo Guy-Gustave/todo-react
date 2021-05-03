@@ -1,11 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+// import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-       <h1>Welcome to the todo list</h1>
+        <TodoList />
       </header>
     </div>
   );
