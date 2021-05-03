@@ -20,6 +20,13 @@ function TodoList() {
     setTodos(rem);
   }
 
+  const updateTodo = (todoId, newValue) =>{
+    if(!newValue.text || /^\s*$/.test(newValue.text)) {
+      return
+    }
+    setTodos(prev =>prev.map(el =>(el.id ===todoId ? newValue: el)));
+  }
+
   const completeTodo = id => {
     let updatedTodo = Todos.map((todo) => {
       if(todo.id === id) {
@@ -34,7 +41,7 @@ function TodoList() {
     <div>
       <h1>Today's plan</h1>
       <TodoForm onSubmit={addTodo}/>
-      <Todo Todos={Todos} completeTodo={completeTodo} removeTodo={removeTodo} />
+      <Todo Todos={Todos} completeTodo={completeTodo} removeTodo={removeTodo} updateTodo={updateTodo} />
     </div>
   )
 }
