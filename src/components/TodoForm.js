@@ -17,10 +17,10 @@ function TodoForm(props) {
     setinput(e.target.value);
   }
 
-  const ref = useRef(null);
-  useEffect(() => {
-    ref.current.focus();
-    });
+  // const ref = useRef(null);
+  // useEffect(() => {
+  //   ref.current.focus();
+  //   });
 
 
   return (
